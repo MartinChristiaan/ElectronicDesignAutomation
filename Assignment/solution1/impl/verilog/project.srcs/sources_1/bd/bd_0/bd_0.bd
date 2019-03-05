@@ -1,0 +1,354 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x7A2B432C15D1F7C2",
+      "device": "xa7z030fbv484-1I",
+      "name": "bd_0",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2018.3",
+      "validated": "true"
+    },
+    "design_tree": {
+      "hls_inst": ""
+    },
+    "interface_ports": {
+      "ap_ctrl": {
+        "mode": "Slave",
+        "vlnv": "xilinx.com:interface:acc_handshake_rtl:1.0"
+      }
+    },
+    "ports": {
+      "ap_clk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "ap_rst",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "bd_0_ap_clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000.0"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "ap_rst": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_HIGH"
+          }
+        }
+      },
+      "inptr_address0": {
+        "type": "data",
+        "direction": "O",
+        "left": "10",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 11} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}",
+            "value_src": "const_prop"
+          }
+        }
+      },
+      "inptr_address1": {
+        "type": "data",
+        "direction": "O",
+        "left": "10",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 11} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}",
+            "value_src": "const_prop"
+          }
+        }
+      },
+      "inptr_ce0": {
+        "direction": "O"
+      },
+      "inptr_ce1": {
+        "type": "data",
+        "direction": "O",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}",
+            "value_src": "const_prop"
+          }
+        }
+      },
+      "inptr_q0": {
+        "type": "data",
+        "direction": "I",
+        "left": "7",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}"
+          }
+        }
+      },
+      "inptr_q1": {
+        "type": "data",
+        "direction": "I",
+        "left": "7",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}"
+          }
+        }
+      },
+      "mask_address0": {
+        "type": "data",
+        "direction": "O",
+        "left": "4",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 5} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}",
+            "value_src": "const_prop"
+          }
+        }
+      },
+      "mask_address1": {
+        "type": "data",
+        "direction": "O",
+        "left": "4",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 5} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}",
+            "value_src": "const_prop"
+          }
+        }
+      },
+      "mask_ce0": {
+        "direction": "O"
+      },
+      "mask_ce1": {
+        "type": "data",
+        "direction": "O",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}",
+            "value_src": "const_prop"
+          }
+        }
+      },
+      "mask_q0": {
+        "type": "data",
+        "direction": "I",
+        "left": "7",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}"
+          }
+        }
+      },
+      "mask_q1": {
+        "type": "data",
+        "direction": "I",
+        "left": "7",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}"
+          }
+        }
+      },
+      "outptr_address0": {
+        "type": "data",
+        "direction": "O",
+        "left": "5",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 6} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}",
+            "value_src": "const_prop"
+          }
+        }
+      },
+      "outptr_ce0": {
+        "direction": "O"
+      },
+      "outptr_d0": {
+        "type": "data",
+        "direction": "O",
+        "left": "7",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}",
+            "value_src": "const_prop"
+          }
+        }
+      },
+      "outptr_we0": {
+        "direction": "O"
+      },
+      "shift": {
+        "type": "data",
+        "direction": "I",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}"
+          }
+        }
+      }
+    },
+    "components": {
+      "hls_inst": {
+        "vlnv": "xilinx.com:hls:img_conv_5x5:1.0",
+        "xci_name": "bd_0_hls_inst_0"
+      }
+    },
+    "interface_nets": {
+      "ap_ctrl_0_1": {
+        "interface_ports": [
+          "ap_ctrl",
+          "hls_inst/ap_ctrl"
+        ]
+      }
+    },
+    "nets": {
+      "ap_clk_0_1": {
+        "ports": [
+          "ap_clk",
+          "hls_inst/ap_clk"
+        ]
+      },
+      "ap_rst_0_1": {
+        "ports": [
+          "ap_rst",
+          "hls_inst/ap_rst"
+        ]
+      },
+      "hls_inst_inptr_address0": {
+        "ports": [
+          "hls_inst/inptr_address0",
+          "inptr_address0"
+        ]
+      },
+      "hls_inst_inptr_address1": {
+        "ports": [
+          "hls_inst/inptr_address1",
+          "inptr_address1"
+        ]
+      },
+      "hls_inst_inptr_ce0": {
+        "ports": [
+          "hls_inst/inptr_ce0",
+          "inptr_ce0"
+        ]
+      },
+      "hls_inst_inptr_ce1": {
+        "ports": [
+          "hls_inst/inptr_ce1",
+          "inptr_ce1"
+        ]
+      },
+      "inptr_q0_0_1": {
+        "ports": [
+          "inptr_q0",
+          "hls_inst/inptr_q0"
+        ]
+      },
+      "inptr_q1_0_1": {
+        "ports": [
+          "inptr_q1",
+          "hls_inst/inptr_q1"
+        ]
+      },
+      "hls_inst_mask_address0": {
+        "ports": [
+          "hls_inst/mask_address0",
+          "mask_address0"
+        ]
+      },
+      "hls_inst_mask_address1": {
+        "ports": [
+          "hls_inst/mask_address1",
+          "mask_address1"
+        ]
+      },
+      "hls_inst_mask_ce0": {
+        "ports": [
+          "hls_inst/mask_ce0",
+          "mask_ce0"
+        ]
+      },
+      "hls_inst_mask_ce1": {
+        "ports": [
+          "hls_inst/mask_ce1",
+          "mask_ce1"
+        ]
+      },
+      "mask_q0_0_1": {
+        "ports": [
+          "mask_q0",
+          "hls_inst/mask_q0"
+        ]
+      },
+      "mask_q1_0_1": {
+        "ports": [
+          "mask_q1",
+          "hls_inst/mask_q1"
+        ]
+      },
+      "hls_inst_outptr_address0": {
+        "ports": [
+          "hls_inst/outptr_address0",
+          "outptr_address0"
+        ]
+      },
+      "hls_inst_outptr_ce0": {
+        "ports": [
+          "hls_inst/outptr_ce0",
+          "outptr_ce0"
+        ]
+      },
+      "hls_inst_outptr_d0": {
+        "ports": [
+          "hls_inst/outptr_d0",
+          "outptr_d0"
+        ]
+      },
+      "hls_inst_outptr_we0": {
+        "ports": [
+          "hls_inst/outptr_we0",
+          "outptr_we0"
+        ]
+      },
+      "shift_0_1": {
+        "ports": [
+          "shift",
+          "hls_inst/shift"
+        ]
+      }
+    }
+  }
+}

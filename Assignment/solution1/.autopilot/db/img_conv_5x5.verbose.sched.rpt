@@ -1,0 +1,318 @@
+
+
+================================================================
+== Vivado HLS Report for 'img_conv_5x5'
+================================================================
+* Date:           Thu Feb 28 11:50:12 2019
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        Assignment
+* Solution:       solution1
+* Product family: azynq
+* Target device:  xa7z030fbv484-1i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|    11.000|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  1948|  1948|  1948|  1948|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+------+------+----------+-----------+-----------+------+----------+
+        |             |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+------+------+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  1947|  1947|        33|          -|          -|    59|    no    |
+        | + Loop 1.1  |    30|    30|         6|          -|          -|     5|    no    |
+        +-------------+------+------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 9
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond2)
+3 --> 
+	4  / (!exitcond)
+	9  / (exitcond)
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	3  / true
+9 --> 
+	2  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([2048 x i8]* %inptr) nounwind, !map !7"   --->   Operation 10 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([64 x i8]* %outptr) nounwind, !map !13"   --->   Operation 11 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([25 x i8]* %mask) nounwind, !map !19"   --->   Operation 12 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %shift) nounwind, !map !25"   --->   Operation 13 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([13 x i8]* @img_conv_5x5_str) nounwind"   --->   Operation 14 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%shift_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %shift) nounwind" [img_conv_5x5.c:19]   --->   Operation 15 'read' 'shift_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (1.76ns)   --->   "br label %1" [img_conv_5x5.c:48]   --->   Operation 16 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 1.82>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%IN5_0_rec = phi i6 [ 0, %0 ], [ %p_rec, %3 ]" [img_conv_5x5.c:80]   --->   Operation 17 'phi' 'IN5_0_rec' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%IN5_0_rec_cast1 = zext i6 %IN5_0_rec to i9" [img_conv_5x5.c:80]   --->   Operation 18 'zext' 'IN5_0_rec_cast1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%IN5_0_rec_cast2 = zext i6 %IN5_0_rec to i8" [img_conv_5x5.c:80]   --->   Operation 19 'zext' 'IN5_0_rec_cast2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%IN5_0_rec_cast17_cas = zext i6 %IN5_0_rec to i7" [img_conv_5x5.c:80]   --->   Operation 20 'zext' 'IN5_0_rec_cast17_cas' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%IN5_0_rec_cast = zext i6 %IN5_0_rec to i64" [img_conv_5x5.c:80]   --->   Operation 21 'zext' 'IN5_0_rec_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%outptr_addr = getelementptr [64 x i8]* %outptr, i64 0, i64 %IN5_0_rec_cast" [img_conv_5x5.c:80]   --->   Operation 22 'getelementptr' 'outptr_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 59, i64 59, i64 59) nounwind"   --->   Operation 23 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (1.42ns)   --->   "%exitcond2 = icmp eq i6 %IN5_0_rec, -5" [img_conv_5x5.c:48]   --->   Operation 24 'icmp' 'exitcond2' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.09> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 25 [1/1] (1.82ns)   --->   "%p_rec = add i6 %IN5_0_rec, 1" [img_conv_5x5.c:80]   --->   Operation 25 'add' 'p_rec' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "br i1 %exitcond2, label %4, label %.preheader.preheader" [img_conv_5x5.c:48]   --->   Operation 26 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (1.76ns)   --->   "br label %.preheader" [img_conv_5x5.c:52]   --->   Operation 27 'br' <Predicate = (!exitcond2)> <Delay = 1.76>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "ret void" [img_conv_5x5.c:90]   --->   Operation 28 'ret' <Predicate = (exitcond2)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 7.88>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%sum = phi i21 [ %sum_2, %2 ], [ 0, %.preheader.preheader ]"   --->   Operation 29 'phi' 'sum' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%i = phi i3 [ %i_1, %2 ], [ 0, %.preheader.preheader ]"   --->   Operation 30 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%i_cast1 = zext i3 %i to i5" [img_conv_5x5.c:52]   --->   Operation 31 'zext' 'i_cast1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%i_cast = zext i3 %i to i4" [img_conv_5x5.c:52]   --->   Operation 32 'zext' 'i_cast' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 33 [1/1] (1.13ns)   --->   "%exitcond = icmp eq i3 %i, -3" [img_conv_5x5.c:52]   --->   Operation 33 'icmp' 'exitcond' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.09> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "%empty_4 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5, i64 5, i64 5) nounwind"   --->   Operation 34 'speclooptripcount' 'empty_4' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 35 [1/1] (1.65ns)   --->   "%i_1 = add i3 %i, 1" [img_conv_5x5.c:52]   --->   Operation 35 'add' 'i_1' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %3, label %2" [img_conv_5x5.c:52]   --->   Operation 36 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%tmp_4 = zext i3 %i to i64" [img_conv_5x5.c:55]   --->   Operation 37 'zext' 'tmp_4' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%tmp_4_cast = zext i3 %i to i6" [img_conv_5x5.c:55]   --->   Operation 38 'zext' 'tmp_4_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 39 [1/1] (1.82ns)   --->   "%sum1 = add i6 %IN5_0_rec, %tmp_4_cast" [img_conv_5x5.c:55]   --->   Operation 39 'add' 'sum1' <Predicate = (!exitcond)> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "%sum1_cast = zext i6 %sum1 to i64" [img_conv_5x5.c:55]   --->   Operation 40 'zext' 'sum1_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%inptr_addr = getelementptr [2048 x i8]* %inptr, i64 0, i64 %sum1_cast" [img_conv_5x5.c:55]   --->   Operation 41 'getelementptr' 'inptr_addr' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 42 [2/2] (3.25ns)   --->   "%inptr_load = load i8* %inptr_addr, align 1" [img_conv_5x5.c:55]   --->   Operation 42 'load' 'inptr_load' <Predicate = (!exitcond)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 64> <RAM>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%tmp1 = call i7 @_ssdm_op_BitConcatenate.i7.i4.i3(i4 -8, i3 %i)" [img_conv_5x5.c:56]   --->   Operation 43 'bitconcatenate' 'tmp1' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 44 [1/1] (1.87ns)   --->   "%sum3 = add i7 %tmp1, %IN5_0_rec_cast17_cas" [img_conv_5x5.c:56]   --->   Operation 44 'add' 'sum3' <Predicate = (!exitcond)> <Delay = 1.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%tmp2 = call i8 @_ssdm_op_BitConcatenate.i8.i5.i3(i5 -16, i3 %i)" [img_conv_5x5.c:57]   --->   Operation 45 'bitconcatenate' 'tmp2' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 46 [1/1] (1.91ns)   --->   "%sum5 = add i8 %tmp2, %IN5_0_rec_cast2" [img_conv_5x5.c:57]   --->   Operation 46 'add' 'sum5' <Predicate = (!exitcond)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%tmp4 = call i9 @_ssdm_op_BitConcatenate.i9.i6.i3(i6 -32, i3 %i)" [img_conv_5x5.c:59]   --->   Operation 47 'bitconcatenate' 'tmp4' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 48 [1/1] (1.93ns)   --->   "%sum9 = add i9 %tmp4, %IN5_0_rec_cast1" [img_conv_5x5.c:59]   --->   Operation 48 'add' 'sum9' <Predicate = (!exitcond)> <Delay = 1.93> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 49 [1/1] (0.00ns)   --->   "%mask_addr = getelementptr [25 x i8]* %mask, i64 0, i64 %tmp_4" [img_conv_5x5.c:61]   --->   Operation 49 'getelementptr' 'mask_addr' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 50 [2/2] (2.32ns)   --->   "%mask_load = load i8* %mask_addr, align 1" [img_conv_5x5.c:61]   --->   Operation 50 'load' 'mask_load' <Predicate = (!exitcond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 64> <RAM>
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%sum_cast = sext i21 %sum to i32" [img_conv_5x5.c:52]   --->   Operation 51 'sext' 'sum_cast' <Predicate = (exitcond)> <Delay = 0.00>
+ST_3 : Operation 52 [1/1] (4.42ns)   --->   "%sum_1 = ashr i32 %sum_cast, %shift_read" [img_conv_5x5.c:82]   --->   Operation 52 'ashr' 'sum_1' <Predicate = (exitcond)> <Delay = 4.42> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 4.42> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 53 [1/1] (0.00ns)   --->   "%tmp = trunc i32 %sum_1 to i21" [img_conv_5x5.c:82]   --->   Operation 53 'trunc' 'tmp' <Predicate = (exitcond)> <Delay = 0.00>
+ST_3 : Operation 54 [1/1] (0.00ns)   --->   "%tmp_1 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %sum_1, i32 20)" [img_conv_5x5.c:84]   --->   Operation 54 'bitselect' 'tmp_1' <Predicate = (exitcond)> <Delay = 0.00>
+ST_3 : Operation 55 [1/1] (1.37ns)   --->   "%p_s = select i1 %tmp_1, i21 0, i21 %tmp" [img_conv_5x5.c:84]   --->   Operation 55 'select' 'p_s' <Predicate = (exitcond)> <Delay = 1.37> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 56 [1/1] (0.00ns)   --->   "%tmp_2 = call i13 @_ssdm_op_PartSelect.i13.i21.i32.i32(i21 %p_s, i32 8, i32 20)" [img_conv_5x5.c:85]   --->   Operation 56 'partselect' 'tmp_2' <Predicate = (exitcond)> <Delay = 0.00>
+ST_3 : Operation 57 [1/1] (2.09ns)   --->   "%icmp = icmp ne i13 %tmp_2, 0" [img_conv_5x5.c:85]   --->   Operation 57 'icmp' 'icmp' <Predicate = (exitcond)> <Delay = 2.09> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.09> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 58 [1/1] (0.00ns)   --->   "%tmp_13 = trunc i21 %p_s to i8" [img_conv_5x5.c:87]   --->   Operation 58 'trunc' 'tmp_13' <Predicate = (exitcond)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 4.05>
+ST_4 : Operation 59 [1/2] (3.25ns)   --->   "%inptr_load = load i8* %inptr_addr, align 1" [img_conv_5x5.c:55]   --->   Operation 59 'load' 'inptr_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 64> <RAM>
+ST_4 : Operation 60 [1/1] (0.00ns)   --->   "%sum3_cast = zext i7 %sum3 to i64" [img_conv_5x5.c:56]   --->   Operation 60 'zext' 'sum3_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 61 [1/1] (0.00ns)   --->   "%inptr_addr_1 = getelementptr [2048 x i8]* %inptr, i64 0, i64 %sum3_cast" [img_conv_5x5.c:56]   --->   Operation 61 'getelementptr' 'inptr_addr_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 62 [2/2] (3.25ns)   --->   "%inptr_load_1 = load i8* %inptr_addr_1, align 1" [img_conv_5x5.c:56]   --->   Operation 62 'load' 'inptr_load_1' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 64> <RAM>
+ST_4 : Operation 63 [1/1] (0.00ns)   --->   "%sum5_cast = zext i8 %sum5 to i64" [img_conv_5x5.c:57]   --->   Operation 63 'zext' 'sum5_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 64 [1/1] (0.00ns)   --->   "%inptr_addr_2 = getelementptr [2048 x i8]* %inptr, i64 0, i64 %sum5_cast" [img_conv_5x5.c:57]   --->   Operation 64 'getelementptr' 'inptr_addr_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 65 [2/2] (3.25ns)   --->   "%inptr_load_2 = load i8* %inptr_addr_2, align 1" [img_conv_5x5.c:57]   --->   Operation 65 'load' 'inptr_load_2' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 64> <RAM>
+ST_4 : Operation 66 [1/2] (2.32ns)   --->   "%mask_load = load i8* %mask_addr, align 1" [img_conv_5x5.c:61]   --->   Operation 66 'load' 'mask_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 64> <RAM>
+ST_4 : Operation 67 [1/1] (1.73ns)   --->   "%tmp_5 = add i4 %i_cast, 5" [img_conv_5x5.c:62]   --->   Operation 67 'add' 'tmp_5' <Predicate = true> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 68 [1/1] (0.00ns)   --->   "%tmp_6 = zext i4 %tmp_5 to i64" [img_conv_5x5.c:62]   --->   Operation 68 'zext' 'tmp_6' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 69 [1/1] (0.00ns)   --->   "%mask_addr_1 = getelementptr [25 x i8]* %mask, i64 0, i64 %tmp_6" [img_conv_5x5.c:62]   --->   Operation 69 'getelementptr' 'mask_addr_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 70 [2/2] (2.32ns)   --->   "%mask_load_1 = load i8* %mask_addr_1, align 1" [img_conv_5x5.c:62]   --->   Operation 70 'load' 'mask_load_1' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 64> <RAM>
+ST_4 : Operation 71 [1/1] (1.73ns)   --->   "%tmp_7 = add i4 %i_cast, -6" [img_conv_5x5.c:63]   --->   Operation 71 'add' 'tmp_7' <Predicate = true> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 72 [1/1] (0.00ns)   --->   "%tmp_8 = zext i4 %tmp_7 to i64" [img_conv_5x5.c:63]   --->   Operation 72 'zext' 'tmp_8' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 73 [1/1] (0.00ns)   --->   "%mask_addr_2 = getelementptr [25 x i8]* %mask, i64 0, i64 %tmp_8" [img_conv_5x5.c:63]   --->   Operation 73 'getelementptr' 'mask_addr_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 74 [2/2] (2.32ns)   --->   "%mask_load_2 = load i8* %mask_addr_2, align 1" [img_conv_5x5.c:63]   --->   Operation 74 'load' 'mask_load_2' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 64> <RAM>
+
+State 5 <SV = 4> <Delay = 4.10>
+ST_5 : Operation 75 [1/2] (3.25ns)   --->   "%inptr_load_1 = load i8* %inptr_addr_1, align 1" [img_conv_5x5.c:56]   --->   Operation 75 'load' 'inptr_load_1' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 64> <RAM>
+ST_5 : Operation 76 [1/2] (3.25ns)   --->   "%inptr_load_2 = load i8* %inptr_addr_2, align 1" [img_conv_5x5.c:57]   --->   Operation 76 'load' 'inptr_load_2' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 64> <RAM>
+ST_5 : Operation 77 [1/1] (0.00ns)   --->   "%sum7_cast1 = sext i7 %sum3 to i8" [img_conv_5x5.c:58]   --->   Operation 77 'sext' 'sum7_cast1' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 78 [1/1] (0.00ns)   --->   "%sum7_cast = zext i8 %sum7_cast1 to i64" [img_conv_5x5.c:58]   --->   Operation 78 'zext' 'sum7_cast' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 79 [1/1] (0.00ns)   --->   "%inptr_addr_3 = getelementptr [2048 x i8]* %inptr, i64 0, i64 %sum7_cast" [img_conv_5x5.c:58]   --->   Operation 79 'getelementptr' 'inptr_addr_3' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 80 [2/2] (3.25ns)   --->   "%inptr_load_3 = load i8* %inptr_addr_3, align 1" [img_conv_5x5.c:58]   --->   Operation 80 'load' 'inptr_load_3' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 64> <RAM>
+ST_5 : Operation 81 [1/1] (0.00ns)   --->   "%sum9_cast = zext i9 %sum9 to i64" [img_conv_5x5.c:59]   --->   Operation 81 'zext' 'sum9_cast' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 82 [1/1] (0.00ns)   --->   "%inptr_addr_4 = getelementptr [2048 x i8]* %inptr, i64 0, i64 %sum9_cast" [img_conv_5x5.c:59]   --->   Operation 82 'getelementptr' 'inptr_addr_4' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 83 [2/2] (3.25ns)   --->   "%inptr_load_4 = load i8* %inptr_addr_4, align 1" [img_conv_5x5.c:59]   --->   Operation 83 'load' 'inptr_load_4' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 64> <RAM>
+ST_5 : Operation 84 [1/2] (2.32ns)   --->   "%mask_load_1 = load i8* %mask_addr_1, align 1" [img_conv_5x5.c:62]   --->   Operation 84 'load' 'mask_load_1' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 64> <RAM>
+ST_5 : Operation 85 [1/2] (2.32ns)   --->   "%mask_load_2 = load i8* %mask_addr_2, align 1" [img_conv_5x5.c:63]   --->   Operation 85 'load' 'mask_load_2' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 64> <RAM>
+ST_5 : Operation 86 [1/1] (1.78ns)   --->   "%tmp_9 = add i5 %i_cast1, 15" [img_conv_5x5.c:64]   --->   Operation 86 'add' 'tmp_9' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 87 [1/1] (0.00ns)   --->   "%tmp_s = zext i5 %tmp_9 to i64" [img_conv_5x5.c:64]   --->   Operation 87 'zext' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 88 [1/1] (0.00ns)   --->   "%mask_addr_3 = getelementptr [25 x i8]* %mask, i64 0, i64 %tmp_s" [img_conv_5x5.c:64]   --->   Operation 88 'getelementptr' 'mask_addr_3' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 89 [2/2] (2.32ns)   --->   "%mask_load_3 = load i8* %mask_addr_3, align 1" [img_conv_5x5.c:64]   --->   Operation 89 'load' 'mask_load_3' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 64> <RAM>
+ST_5 : Operation 90 [1/1] (1.78ns)   --->   "%tmp_10 = add i5 %i_cast1, -12" [img_conv_5x5.c:65]   --->   Operation 90 'add' 'tmp_10' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 91 [1/1] (0.00ns)   --->   "%tmp_11 = zext i5 %tmp_10 to i64" [img_conv_5x5.c:65]   --->   Operation 91 'zext' 'tmp_11' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 92 [1/1] (0.00ns)   --->   "%mask_addr_4 = getelementptr [25 x i8]* %mask, i64 0, i64 %tmp_11" [img_conv_5x5.c:65]   --->   Operation 92 'getelementptr' 'mask_addr_4' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 93 [2/2] (2.32ns)   --->   "%mask_load_4 = load i8* %mask_addr_4, align 1" [img_conv_5x5.c:65]   --->   Operation 93 'load' 'mask_load_4' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 64> <RAM>
+
+State 6 <SV = 5> <Delay = 7.99>
+ST_6 : Operation 94 [1/2] (3.25ns)   --->   "%inptr_load_3 = load i8* %inptr_addr_3, align 1" [img_conv_5x5.c:58]   --->   Operation 94 'load' 'inptr_load_3' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 64> <RAM>
+ST_6 : Operation 95 [1/2] (3.25ns)   --->   "%inptr_load_4 = load i8* %inptr_addr_4, align 1" [img_conv_5x5.c:59]   --->   Operation 95 'load' 'inptr_load_4' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 64> <RAM>
+ST_6 : Operation 96 [1/2] (2.32ns)   --->   "%mask_load_3 = load i8* %mask_addr_3, align 1" [img_conv_5x5.c:64]   --->   Operation 96 'load' 'mask_load_3' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 64> <RAM>
+ST_6 : Operation 97 [1/2] (2.32ns)   --->   "%mask_load_4 = load i8* %mask_addr_4, align 1" [img_conv_5x5.c:65]   --->   Operation 97 'load' 'mask_load_4' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 64> <RAM>
+ST_6 : Operation 98 [1/1] (0.00ns)   --->   "%tmp_12_cast = zext i8 %inptr_load to i16" [img_conv_5x5.c:67]   --->   Operation 98 'zext' 'tmp_12_cast' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 99 [1/1] (0.00ns)   --->   "%tmp_13_cast = sext i8 %mask_load to i16" [img_conv_5x5.c:67]   --->   Operation 99 'sext' 'tmp_13_cast' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 100 [1/1] (4.17ns)   --->   "%sum00 = mul i16 %tmp_12_cast, %tmp_13_cast" [img_conv_5x5.c:67]   --->   Operation 100 'mul' 'sum00' <Predicate = true> <Delay = 4.17> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 4.17> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 101 [1/1] (0.00ns)   --->   "%sum00_cast = sext i16 %sum00 to i17" [img_conv_5x5.c:67]   --->   Operation 101 'sext' 'sum00_cast' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 102 [1/1] (0.00ns)   --->   "%tmp_14_cast = zext i8 %inptr_load_1 to i16" [img_conv_5x5.c:68]   --->   Operation 102 'zext' 'tmp_14_cast' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 103 [1/1] (0.00ns)   --->   "%tmp_15_cast = sext i8 %mask_load_1 to i16" [img_conv_5x5.c:68]   --->   Operation 103 'sext' 'tmp_15_cast' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 104 [1/1] (3.36ns) (grouped into DSP with root node tmp7)   --->   "%sum11 = mul i16 %tmp_14_cast, %tmp_15_cast" [img_conv_5x5.c:68]   --->   Operation 104 'mul' 'sum11' <Predicate = true> <Delay = 3.36> <Core = "DSP48">   --->   Core 65 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_6 : Operation 105 [1/1] (0.00ns) (grouped into DSP with root node tmp7)   --->   "%sum11_cast = sext i16 %sum11 to i17" [img_conv_5x5.c:68]   --->   Operation 105 'sext' 'sum11_cast' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 106 [1/1] (0.00ns)   --->   "%tmp_18_cast = zext i8 %inptr_load_3 to i16" [img_conv_5x5.c:70]   --->   Operation 106 'zext' 'tmp_18_cast' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 107 [1/1] (0.00ns)   --->   "%tmp_19_cast = sext i8 %mask_load_3 to i16" [img_conv_5x5.c:70]   --->   Operation 107 'sext' 'tmp_19_cast' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 108 [1/1] (4.17ns)   --->   "%sum33 = mul i16 %tmp_18_cast, %tmp_19_cast" [img_conv_5x5.c:70]   --->   Operation 108 'mul' 'sum33' <Predicate = true> <Delay = 4.17> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 4.17> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 109 [1/1] (3.82ns) (root node of the DSP)   --->   "%tmp7 = add i17 %sum00_cast, %sum11_cast" [img_conv_5x5.c:73]   --->   Operation 109 'add' 'tmp7' <Predicate = true> <Delay = 3.82> <Core = "DSP48">   --->   Core 65 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 7 <SV = 6> <Delay = 11.0>
+ST_7 : Operation 110 [1/1] (0.00ns)   --->   "%tmp_16_cast = zext i8 %inptr_load_2 to i16" [img_conv_5x5.c:69]   --->   Operation 110 'zext' 'tmp_16_cast' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 111 [1/1] (0.00ns)   --->   "%tmp_17_cast = sext i8 %mask_load_2 to i16" [img_conv_5x5.c:69]   --->   Operation 111 'sext' 'tmp_17_cast' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 112 [1/1] (3.36ns) (grouped into DSP with root node tmp8)   --->   "%sum22 = mul i16 %tmp_16_cast, %tmp_17_cast" [img_conv_5x5.c:69]   --->   Operation 112 'mul' 'sum22' <Predicate = true> <Delay = 3.36> <Core = "DSP48">   --->   Core 65 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_7 : Operation 113 [1/1] (0.00ns) (grouped into DSP with root node tmp8)   --->   "%sum22_cast = sext i16 %sum22 to i18" [img_conv_5x5.c:69]   --->   Operation 113 'sext' 'sum22_cast' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 114 [1/1] (0.00ns)   --->   "%sum33_cast = sext i16 %sum33 to i17" [img_conv_5x5.c:70]   --->   Operation 114 'sext' 'sum33_cast' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 115 [1/1] (0.00ns)   --->   "%tmp_20_cast = zext i8 %inptr_load_4 to i16" [img_conv_5x5.c:71]   --->   Operation 115 'zext' 'tmp_20_cast' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 116 [1/1] (0.00ns)   --->   "%tmp_21_cast = sext i8 %mask_load_4 to i16" [img_conv_5x5.c:71]   --->   Operation 116 'sext' 'tmp_21_cast' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 117 [1/1] (3.36ns) (grouped into DSP with root node tmp9)   --->   "%sum44 = mul i16 %tmp_20_cast, %tmp_21_cast" [img_conv_5x5.c:71]   --->   Operation 117 'mul' 'sum44' <Predicate = true> <Delay = 3.36> <Core = "DSP48">   --->   Core 65 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_7 : Operation 118 [1/1] (0.00ns) (grouped into DSP with root node tmp9)   --->   "%sum44_cast = sext i16 %sum44 to i17" [img_conv_5x5.c:71]   --->   Operation 118 'sext' 'sum44_cast' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 119 [1/1] (3.82ns) (root node of the DSP)   --->   "%tmp9 = add i17 %sum33_cast, %sum44_cast" [img_conv_5x5.c:73]   --->   Operation 119 'add' 'tmp9' <Predicate = true> <Delay = 3.82> <Core = "DSP48">   --->   Core 65 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_7 : Operation 120 [1/1] (0.00ns)   --->   "%tmp9_cast = sext i17 %tmp9 to i18" [img_conv_5x5.c:73]   --->   Operation 120 'sext' 'tmp9_cast' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 121 [1/1] (3.82ns) (root node of the DSP)   --->   "%tmp8 = add i18 %tmp9_cast, %sum22_cast" [img_conv_5x5.c:73]   --->   Operation 121 'add' 'tmp8' <Predicate = true> <Delay = 3.82> <Core = "DSP48">   --->   Core 65 'DSP48' <Latency = 0> <II = 1> <Delay = 7.18> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 8 <SV = 7> <Delay = 4.36>
+ST_8 : Operation 122 [1/1] (0.00ns)   --->   "%tmp7_cast = sext i17 %tmp7 to i19" [img_conv_5x5.c:73]   --->   Operation 122 'sext' 'tmp7_cast' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 123 [1/1] (0.00ns)   --->   "%tmp8_cast = sext i18 %tmp8 to i19" [img_conv_5x5.c:73]   --->   Operation 123 'sext' 'tmp8_cast' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 124 [1/1] (2.13ns)   --->   "%tmp_12 = add i19 %tmp8_cast, %tmp7_cast" [img_conv_5x5.c:73]   --->   Operation 124 'add' 'tmp_12' <Predicate = true> <Delay = 2.13> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 125 [1/1] (0.00ns)   --->   "%p_cast = sext i19 %tmp_12 to i21" [img_conv_5x5.c:73]   --->   Operation 125 'sext' 'p_cast' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 126 [1/1] (2.22ns)   --->   "%sum_2 = add i21 %sum, %p_cast" [img_conv_5x5.c:73]   --->   Operation 126 'add' 'sum_2' <Predicate = true> <Delay = 2.22> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.22> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 127 [1/1] (0.00ns)   --->   "br label %.preheader" [img_conv_5x5.c:52]   --->   Operation 127 'br' <Predicate = true> <Delay = 0.00>
+
+State 9 <SV = 3> <Delay = 3.69>
+ST_9 : Operation 128 [1/1] (1.37ns)   --->   "%tmp_3 = select i1 %icmp, i8 -1, i8 %tmp_13" [img_conv_5x5.c:87]   --->   Operation 128 'select' 'tmp_3' <Predicate = true> <Delay = 1.37> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_9 : Operation 129 [1/1] (2.32ns)   --->   "store i8 %tmp_3, i8* %outptr_addr, align 1" [img_conv_5x5.c:87]   --->   Operation 129 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 64> <RAM>
+ST_9 : Operation 130 [1/1] (0.00ns)   --->   "br label %1" [img_conv_5x5.c:48]   --->   Operation 130 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('IN5_0_rec', img_conv_5x5.c:80) with incoming values : ('p_rec', img_conv_5x5.c:80) [13]  (1.77 ns)
+
+ <State 2>: 1.83ns
+The critical path consists of the following:
+	'phi' operation ('IN5_0_rec', img_conv_5x5.c:80) with incoming values : ('p_rec', img_conv_5x5.c:80) [13]  (0 ns)
+	'add' operation ('p_rec', img_conv_5x5.c:80) [21]  (1.83 ns)
+
+ <State 3>: 7.89ns
+The critical path consists of the following:
+	'phi' operation ('sum') with incoming values : ('sum', img_conv_5x5.c:73) [26]  (0 ns)
+	'ashr' operation ('sum', img_conv_5x5.c:82) [110]  (4.42 ns)
+	'select' operation ('p_s', img_conv_5x5.c:84) [113]  (1.37 ns)
+	'icmp' operation ('icmp', img_conv_5x5.c:85) [115]  (2.1 ns)
+
+ <State 4>: 4.06ns
+The critical path consists of the following:
+	'add' operation ('tmp_5', img_conv_5x5.c:62) [62]  (1.74 ns)
+	'getelementptr' operation ('mask_addr_1', img_conv_5x5.c:62) [64]  (0 ns)
+	'load' operation ('mask_load_1', img_conv_5x5.c:62) on array 'mask' [65]  (2.32 ns)
+
+ <State 5>: 4.1ns
+The critical path consists of the following:
+	'add' operation ('tmp_9', img_conv_5x5.c:64) [70]  (1.78 ns)
+	'getelementptr' operation ('mask_addr_3', img_conv_5x5.c:64) [72]  (0 ns)
+	'load' operation ('mask_load_3', img_conv_5x5.c:64) on array 'mask' [73]  (2.32 ns)
+
+ <State 6>: 7.99ns
+The critical path consists of the following:
+	'mul' operation ('sum00', img_conv_5x5.c:67) [80]  (4.17 ns)
+	'add' operation of DSP[98] ('tmp7', img_conv_5x5.c:73) [98]  (3.82 ns)
+
+ <State 7>: 11ns
+The critical path consists of the following:
+	'mul' operation of DSP[100] ('sum44', img_conv_5x5.c:71) [96]  (3.36 ns)
+	'add' operation of DSP[100] ('tmp9', img_conv_5x5.c:73) [100]  (3.82 ns)
+	'add' operation of DSP[102] ('tmp8', img_conv_5x5.c:73) [102]  (3.82 ns)
+
+ <State 8>: 4.36ns
+The critical path consists of the following:
+	'add' operation ('tmp_12', img_conv_5x5.c:73) [104]  (2.14 ns)
+	'add' operation ('sum', img_conv_5x5.c:73) [106]  (2.23 ns)
+
+ <State 9>: 3.69ns
+The critical path consists of the following:
+	'select' operation ('tmp_3', img_conv_5x5.c:87) [117]  (1.37 ns)
+	'store' operation (img_conv_5x5.c:87) of variable 'tmp_3', img_conv_5x5.c:87 on array 'outptr' [118]  (2.32 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

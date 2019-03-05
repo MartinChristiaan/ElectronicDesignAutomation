@@ -1,0 +1,16 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling(apcc) ../../../../img_conv_test.c in debug mode
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'marti' on host 'desktop-dqmu8me' (Windows NT_amd64 version 6.2) on Mon Mar 04 11:42:28 +0100 2019
+INFO: [HLS 200-10] In directory 'C:/Users/marti/source/repos/EDA_Assignment/Assignment/solution1/csim/build'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Generating csim.exe
+Makefile.rules:399: recipe for target 'csim.exe' failed
+obj/img_conv_test.o: In function `main':
+C:\Users\marti\source\repos\EDA_Assignment\Assignment\solution1\csim\build/apcc_db/img_conv_test.c:1059: undefined reference to `IMG_conv_5x5_c'
+collect2.exe: error: ld returned 1 exit status
+make: *** [csim.exe] Error 1
+ERR: [SIM 100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 3] *************** CSIM finish ***************

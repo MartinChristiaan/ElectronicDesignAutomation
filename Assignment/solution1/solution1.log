@@ -1,0 +1,110 @@
+==============================================================
+File generated on Thu Feb 28 11:50:01 +0100 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7z030fbv484-1i'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'img_conv_5x5.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 102.898 ; gain = 16.520
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 102.898 ; gain = 16.520
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 104.039 ; gain = 17.660
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 104.293 ; gain = 17.914
+INFO: [XFORM 203-11] Balancing expressions in function 'img_conv_5x5' (img_conv_5x5.c:19)...5 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 126.113 ; gain = 39.734
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 126.113 ; gain = 39.734
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'img_conv_5x5' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'img_conv_5x5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-21] Estimated clock period (11ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+WARNING: [SCHED 204-21] The critical path in module 'img_conv_5x5' consists of the following:
+	'mul' operation of DSP[100] ('sum44', img_conv_5x5.c:71) [96]  (3.36 ns)
+	'add' operation of DSP[100] ('tmp9', img_conv_5x5.c:73) [100]  (3.82 ns)
+	'add' operation of DSP[102] ('tmp8', img_conv_5x5.c:73) [102]  (3.82 ns)
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 11.599 seconds; current allocated memory: 76.102 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 2 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.181 seconds; current allocated memory: 76.550 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'img_conv_5x5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'img_conv_5x5/inptr' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'img_conv_5x5/outptr' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'img_conv_5x5/mask' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'img_conv_5x5/shift' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'img_conv_5x5' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'img_conv_5x5_mac_muladd_8ns_8s_16s_17_1_1' to 'img_conv_5x5_mac_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'img_conv_5x5_mac_muladd_8ns_8s_17s_18_1_1' to 'img_conv_5x5_mac_cud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'img_conv_5x5_mac_bkb': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'img_conv_5x5_mac_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'img_conv_5x5'.
+INFO: [HLS 200-111]  Elapsed time: 0.259 seconds; current allocated memory: 77.219 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:03 ; elapsed = 00:00:14 . Memory (MB): peak = 128.133 ; gain = 41.754
+INFO: [SYSC 207-301] Generating SystemC RTL for img_conv_5x5.
+INFO: [VHDL 208-304] Generating VHDL RTL for img_conv_5x5.
+INFO: [VLOG 209-307] Generating Verilog RTL for img_conv_5x5.
+INFO: [HLS 200-112] Total elapsed time: 14.528 seconds; peak allocated memory: 77.219 MB.
+==============================================================
+File generated on Thu Feb 28 11:55:08 +0100 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7z030fbv484-1i'
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+INFO: [IMPL 213-8] Starting RTL evaluation using Vivado ...
+==============================================================
+File generated on Mon Mar 04 11:39:33 +0100 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7z030fbv484-1i'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+File generated on Mon Mar 04 11:40:41 +0100 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7z030fbv484-1i'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+File generated on Mon Mar 04 11:42:26 +0100 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7z030fbv484-1i'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************

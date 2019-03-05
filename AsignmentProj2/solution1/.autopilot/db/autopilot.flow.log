@@ -4343,3 +4343,104 @@ INFO: [SIM 211-3] *************** CSIM finish ***************
 Command   csim_design done; error code: 2; 6.433 sec.
 Command ap_source done; error code: 1; 6.699 sec.
 Execute cleanup_all 
+INFO-FLOW: Workspace C:/Users/marti/Source/Repos/ElectronicDesignAutomation/AsignmentProj2/solution1 opened at Tue Mar 05 18:34:33 +0100 2019
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/azynq/azynq 
+Execute       source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/common/xilinx.lib 
+Execute         source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/interface/plb46.lib 
+Execute           source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/interface/fsl.lib 
+Execute           source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/interface/axi4.lib 
+Execute           source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/interface/maxi.lib 
+Execute           source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/interface/saxilite.lib 
+Execute         source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/common/dsp48.lib 
+Execute         source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/ip/xfft.lib 
+Execute         source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/ip/xfir.lib 
+Execute       source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/common/xilinx_old.lib 
+Execute       source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/common/xilinx_vivado.lib 
+Execute       source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/azynq/dsp48e1.hlp 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute       config_chip_info -quiet -speed slow 
+Execute       source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute     source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/azynq/azynq.gen 
+Execute       source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute         source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute           source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute           source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute           source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute           source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute             source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute           source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute           source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.105 sec.
+Execute           source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.15 sec.
+Execute         source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.153 sec.
+Command     ap_source done; 0.154 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/azynq/azynq_fpv6 
+Execute       source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/common/xilinx_hp.lib 
+Execute       source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute           source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute           source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute             source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/azynq/azynq_hp.hlp 
+Execute     source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/azynq/azynq_fpv6.gen 
+Execute       source G:/Vivadoshizzle/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     set_part xa7z030fbv484-1i 
+Execute       add_library xilinx/azynq/azynq:xa7z030:fbv484:-1i 
+Execute         get_default_platform 
+Execute         license_isbetapart xa7z030 
+Command         license_isbetapart done; error code: 1; 
+Execute         get_default_platform 
+Execute         config_chip_info -quiet -resource  {SLICE 19650}  {LUT 78600}     {FF 157200} {DSP48E 400}   {BRAM 530}  
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/azynq/azynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xa7z030fbv484-1i'
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute     config_chip_info -quiet -resource  {SLICE 19650}  {LUT 78600}     {FF 157200} {DSP48E 400}   {BRAM 530}  
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 0.266 sec.
+Execute   csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted C:/Users/marti/Source/Repos/ElectronicDesignAutomation/img_conv_test.c 
+Execute     is_xip C:/Users/marti/Source/Repos/ElectronicDesignAutomation/img_conv_test.c 
+Execute     is_encrypted C:/Users/marti/Source/Repos/ElectronicDesignAutomation/img_conv_5x5.c 
+Execute     is_xip C:/Users/marti/Source/Repos/ElectronicDesignAutomation/img_conv_5x5.c 
+Execute     is_encrypted C:/Users/marti/Source/Repos/ElectronicDesignAutomation/img_conv_5x5.h 
+Execute     is_xip C:/Users/marti/Source/Repos/ElectronicDesignAutomation/img_conv_5x5.h 
+Execute     get_default_platform 
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 6.685 sec.
+Command ap_source done; 6.957 sec.
+Execute cleanup_all 

@@ -2,7 +2,8 @@
 /************************************************************
 
 This convolution function is limited compared to the original pointer based function IMG_conv_5x5_c: 
-1. inputs, outputs and all vector variables are declared as limited arrays to assure Vivado synthesis limitations are met. There are ways to work with pointers on vectors - pls see Vivado examples - but it is easier at this stage to work with arrays(vectors must be limited anyway).   
+1. inputs, outputs and all vector variables are declared as limited arrays to assure Vivado synthesis limitations are met.
+ There are ways to work with pointers on vectors - pls see Vivado examples - but it is easier at this stage to work with arrays(vectors must be limited anyway).   
 2. size of arrays is limited to small numbers - not realistic for image processing - in the .h file, can be easily changed.
 3. the names of variables are mostly kept as in the original but their types can be changed  
 4. .h file contains all needed definitionsas recommended by HLS guidelines 
@@ -16,8 +17,8 @@ The type definitions in img_conv_5x5.h are NOT used here to keep this function a
 *************************************************************/
 #include "img_conv_5x5.h"
 
-void img_conv_5x5(unsigned char inptr[X_N*Y_N], 
-                  unsigned char outptr[X_N], // should this not be X_N - 5
+void img_conv_5x5(unsigned char inptr[X_N*Y_N],
+                  unsigned char outptr[X_N-4], // should this not be X_N - 5
                  // int8 x_dim,
                   char mask[M_N],
                   int  shift) 
@@ -45,7 +46,7 @@ void img_conv_5x5(unsigned char inptr[X_N*Y_N],
 // go through the row of inptr[] image with j index
 // produce one convolution output OUT pixel per iteration  
 
-for (j = 0; j < X_N - 5 ; j++)  
+for (j = 0; j < X_N - 4 ; j++)
     {
          sum = 0;
 

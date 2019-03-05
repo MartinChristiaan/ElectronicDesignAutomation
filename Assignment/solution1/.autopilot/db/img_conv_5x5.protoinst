@@ -1,9 +1,0 @@
-{
-	"version": "1.0",
-	"modules": {
-		"img_conv_5x5": {
-			"proto_instances": {
-			}
-		}
-	}
-}

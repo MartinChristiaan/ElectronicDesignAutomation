@@ -1,69 +1,76 @@
 #include "img_conv_5x5.h"
+#include <stdio.h>
 #include <math.h>
 
-#define X_N 64  // width of row
-#define Y_N 32  // number of rows 
-#define M_N 25  // size of mask array
-
-#include <stdio.h>
 int main()
 {
-    unsigned char outptr[X_N];
+    unsigned char outptr[X_N-4];
+    unsigned char outptr2[X_N-4];
     unsigned char inptr[X_N*Y_N];
+    unsigned char inptr2[X_N*Y_N];
+    unsigned char mask[M_N];
+    unsigned char mask2[M_N];
+    int shift = 0;
+    // Generate some data
     for(int y = 0; y < Y_N; y++)
     {
         for(int x = 0; x < X_N; x++)
         {
-            inptr[x + y * X_N] = sin(x) + sin(y);
+            inptr[x + y * X_N] = x+y;
+            inptr2[x + y * X_N] = x+y;
         }   
     }
-    unsigned char mask[M_N];
+
     for(int i = 0; i < M_N; i++)
     {
-        mask[i] = i;
+        mask[i] = 6;
+        mask2[i] = 6;
     }
 
-    for (int x = 0; x < X_N - 5; x++)
+    //Perform convolution
+    for (int x = 0; x < X_N - 4; x++)
     {
         int sum  = 0;
-        for (int i = 0; i < 5; i++)
+        for (int ymask = 0; ymask < 5; ymask++)
         {
-            for(int j = 0; j < 5; j++)
+            for(int xmask = 0; xmask < 5; xmask++)
             {
-                sum += mask[i + j * 5] * inptr[x];    
+                sum += mask[xmask + ymask * 5] * inptr[x + xmask + ymask * X_N];
             }
         }
 
-        sum = (sum >> 0);
+        sum = (sum >> shift);
 
         if (sum < 0)
             sum = 0;
         if (sum > 255)
             sum = 255;
 
-        outptr[x] = sum;
+        outptr[x] = sum; // Add +1 here to see tests fail!
     }
-    unsigned char outptr2[X_N];
-    IMG_conv_5x5_c(outptr2,inptr, X_N, mask,0);
-    // bool incorrect = false;
-    // for (int newx = 0; newx < X_N-5; newx++)
-	// {
-    // 	if (outptr[newx] != outptr2[newx])
-    // 	{
-    // 		incorrect = true;
-    // 	}
+    img_conv_5x5(inptr2,outptr2, mask2,shift);
+    int incorrect = 0;
+    for(int x2 = 0; x2 < X_N-4; x2++)
+    {
+    	if(outptr[x2]!=outptr2[x2])
+    	{
+    		printf("%c , %c : %i \n ",outptr[x2],outptr2[x2],x2);
+    		incorrect = 1;
+    	}
+	}
+    if (incorrect == 1)
+    {
+    	printf("INCORRECT! \n");
+    	return 1;
+    }
+    else
+    {
+    	printf("CORRECT! \n");
+    	return 0;
 
-	// }
-    // if(incorrect)
-    // {
-    // 	printf("Convolution NOT working properly");
-    // }
-    // else
-    // {
-    // 	printf("Convolution working properly");
-    // }
+    }
+    
 
-    return 0;
 
 
 

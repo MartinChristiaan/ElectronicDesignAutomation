@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="img_conv_5x5.h" path="C:\Users\marti\source\repos\EDA_Assignment\img_conv_5x5.h"/>
-    <originFiles name="img_conv_5x5.c" path="C:\Users\marti\source\repos\EDA_Assignment\img_conv_5x5.c"/>
+    <originFiles name="img_conv_5x5.h" path="C:\Users\marti\Source\Repos\ElectronicDesignAutomation\img_conv_5x5.h"/>
+    <originFiles name="img_conv_5x5.c" path="C:\Users\marti\Source\Repos\ElectronicDesignAutomation\img_conv_5x5.c"/>
   </source>
   <testbench>
-    <originFiles name="img_conv_test.c" path="C:\Users\marti\source\repos\EDA_Assignment\img_conv_test.c"/>
+    <originFiles name="img_conv_test.c" path="C:\Users\marti\Source\Repos\ElectronicDesignAutomation\img_conv_test.c"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

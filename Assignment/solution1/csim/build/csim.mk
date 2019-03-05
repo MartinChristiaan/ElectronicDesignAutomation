@@ -1,5 +1,5 @@
 # ==============================================================
-# File generated on Mon Mar 04 11:42:26 +0100 2019
+# File generated on Tue Mar 05 12:59:59 +0100 2019
 # Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
@@ -25,14 +25,14 @@ HLS_SOURCES = ../../../../img_conv_test.c ../../../../img_conv_5x5.c
 
 TARGET := csim.exe
 
-AUTOPILOT_ROOT := C:/Xilinx/Vivado/2018.3
+AUTOPILOT_ROOT := G:/Vivadoshizzle/Vivado/2018.3
 AUTOPILOT_MACH := win64
 ifdef AP_GCC_M32
   AUTOPILOT_MACH := Linux_x86
   IFLAG += -m32
 endif
 ifndef AP_GCC_PATH
-  AP_GCC_PATH := C:/Xilinx/Vivado/2018.3/msys64/mingw64/bin
+  AP_GCC_PATH := G:/Vivadoshizzle/Vivado/2018.3/msys64/mingw64/bin
 endif
 AUTOPILOT_TOOL := ${AUTOPILOT_ROOT}/${AUTOPILOT_MACH}/tools
 AP_CLANG_PATH := ${AUTOPILOT_ROOT}/msys64/mingw64/bin

@@ -1,7 +1,7 @@
 <project xmlns="com.autoesl.autopilot.project" name="Assignment" top="img_conv_5x5">
     <files>
-        <file name="img_conv_5x5.h" sc="0" tb="false" cflags=""/>
         <file name="img_conv_5x5.c" sc="0" tb="false" cflags=""/>
+        <file name="img_conv_5x5.h" sc="0" tb="false" cflags=""/>
         <file name="../../img_conv_test.c" sc="0" tb="1" cflags=""/>
     </files>
     <includePaths/>

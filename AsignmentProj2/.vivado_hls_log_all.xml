@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value." projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T18:30:47.570+0100"/>
+        <logs message="@E Simulation failed: Function 'main' returns nonzero value '1'." projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T18:30:47.558+0100"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T18:24:22.858+0100"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed.&#xD;&#xA;g++.exe: error: obj/img_conv_test.o: No such file or directory&#xD;&#xA;make: *** [csim.exe] Error 1" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T18:24:22.842+0100"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T18:24:22.829+0100"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T18:24:22.816+0100"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T15:28:01.167+0100"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed.&#xD;&#xA;g++.exe: error: obj/img_conv_5x5.o: No such file or directory&#xD;&#xA;make: *** [csim.exe] Error 1" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T15:28:01.154+0100"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T15:28:01.128+0100"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T15:28:01.114+0100"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T14:15:28.483+0100"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed.&#xD;&#xA;g++.exe: error: obj/img_conv_test.o: No such file or directory&#xD;&#xA;make: *** [csim.exe] Error 1" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T14:15:28.469+0100"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T14:15:28.457+0100"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T14:15:28.446+0100"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T14:13:03.495+0100"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed.&#xD;&#xA;g++.exe: error: obj/img_conv_test.o: No such file or directory&#xD;&#xA;make: *** [csim.exe] Error 1" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T14:13:03.464+0100"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T14:13:03.448+0100"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T14:13:03.432+0100"/>
+      </csimLog>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

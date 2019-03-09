@@ -1,0 +1,543 @@
+
+
+================================================================
+== Vivado HLS Report for 'convolve'
+================================================================
+* Date:           Sat Mar  9 10:48:30 2019
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        AsignmentProj2
+* Solution:       solution1
+* Product family: azynq
+* Target device:  xa7z030fbv484-1i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|    11.000|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-------+-------+-------+-------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    |  min  |  max  |  min  |  max  |   Type  |
+    +-------+-------+-------+-------+---------+
+    |  53845|  53845|  53845|  53845|   none  |
+    +-------+-------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        +------------------------+--------------+------+------+------+------+---------+
+        |                        |              |   Latency   |   Interval  | Pipeline|
+        |        Instance        |    Module    |  min |  max |  min |  max |   Type  |
+        +------------------------+--------------+------+------+------+------+---------+
+        |grp_img_conv_5x5_fu_42  |img_conv_5x5  |  1921|  1921|  1921|  1921|   none  |
+        +------------------------+--------------+------+------+------+------+---------+
+
+        * Loop: 
+        +----------+-------+-------+----------+-----------+-----------+------+----------+
+        |          |    Latency    | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|  min  |  max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-------+-------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  53844|  53844|      1923|          -|          -|    28|    no    |
+        +----------+-------+-------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|     26|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      3|     178|    514|
+|Memory           |        1|      -|      32|     12|
+|Multiplexer      |        -|      -|       -|     30|
+|Register         |        -|      -|      14|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        1|      3|     224|    582|
++-----------------+---------+-------+--------+-------+
+|Available        |      530|    400|  157200|  78600|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |    ~0   |   ~0  |   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +------------------------+--------------+---------+-------+-----+-----+
+    |        Instance        |    Module    | BRAM_18K| DSP48E|  FF | LUT |
+    +------------------------+--------------+---------+-------+-----+-----+
+    |grp_img_conv_5x5_fu_42  |img_conv_5x5  |        0|      3|  178|  514|
+    +------------------------+--------------+---------+-------+-----+-----+
+    |Total                   |              |        0|      3|  178|  514|
+    +------------------------+--------------+---------+-------+-----+-----+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +----------+-----------------+---------+----+----+------+-----+------+-------------+
+    |  Memory  |      Module     | BRAM_18K| FF | LUT| Words| Bits| Banks| W*Bits*Banks|
+    +----------+-----------------+---------+----+----+------+-----+------+-------------+
+    |inptr_U   |convolve_inptr   |        1|   0|   0|  2048|    8|     1|        16384|
+    |mask_U    |convolve_mask    |        0|  16|   4|    25|    8|     1|          200|
+    |outptr_U  |convolve_outptr  |        0|  16|   8|    60|    8|     1|          480|
+    +----------+-----------------+---------+----+----+------+-----+------+-------------+
+    |Total     |                 |        1|  32|  12|  2133|   24|     3|        17064|
+    +----------+-----------------+---------+----+----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------------+----------+-------+---+----+------------+------------+
+    |    Variable Name   | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------+----------+-------+---+----+------------+------------+
+    |z_1_fu_57_p2        |     +    |      0|  0|  15|           5|           1|
+    |exitcond1_fu_51_p2  |   icmp   |      0|  0|  11|           5|           4|
+    +--------------------+----------+-------+---+----+------------+------------+
+    |Total               |          |      0|  0|  26|          10|           5|
+    +--------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------+----+-----------+-----+-----------+
+    |    Name   | LUT| Input Size| Bits| Total Bits|
+    +-----------+----+-----------+-----+-----------+
+    |ap_NS_fsm  |  21|          4|    1|          4|
+    |z_reg_30   |   9|          2|    5|         10|
+    +-----------+----+-----------+-----+-----------+
+    |Total      |  30|          6|    6|         14|
+    +-----------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------------+---+----+-----+-----------+
+    |                 Name                | FF| LUT| Bits| Const Bits|
+    +-------------------------------------+---+----+-----+-----------+
+    |ap_CS_fsm                            |  3|   0|    3|          0|
+    |grp_img_conv_5x5_fu_42_ap_start_reg  |  1|   0|    1|          0|
+    |z_1_reg_66                           |  5|   0|    5|          0|
+    |z_reg_30                             |  5|   0|    5|          0|
+    +-------------------------------------+---+----+-----+-----------+
+    |Total                                | 14|   0|   14|          0|
+    +-------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------+-----+-----+------------+--------------+--------------+
+| RTL Ports| Dir | Bits|  Protocol  | Source Object|    C Type    |
++----------+-----+-----+------------+--------------+--------------+
+|ap_clk    |  in |    1| ap_ctrl_hs |   convolve   | return value |
+|ap_rst    |  in |    1| ap_ctrl_hs |   convolve   | return value |
+|ap_start  |  in |    1| ap_ctrl_hs |   convolve   | return value |
+|ap_done   | out |    1| ap_ctrl_hs |   convolve   | return value |
+|ap_idle   | out |    1| ap_ctrl_hs |   convolve   | return value |
+|ap_ready  | out |    1| ap_ctrl_hs |   convolve   | return value |
++----------+-----+-----+------------+--------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 2
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond1)
+3 --> 
+	2  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.25>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @convolve_str) nounwind"   --->   Operation 4 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (3.25ns)   --->   "%inptr = alloca [2048 x i8], align 16" [full_img_conv_5x5.c:4]   --->   Operation 5 'alloca' 'inptr' <Predicate = true> <Delay = 3.25>
+ST_1 : Operation 6 [1/1] (2.32ns)   --->   "%outptr = alloca [60 x i8], align 16"   --->   Operation 6 'alloca' 'outptr' <Predicate = true> <Delay = 2.32>
+ST_1 : Operation 7 [1/1] (2.32ns)   --->   "%mask = alloca [25 x i8], align 16" [full_img_conv_5x5.c:7]   --->   Operation 7 'alloca' 'mask' <Predicate = true> <Delay = 2.32>
+ST_1 : Operation 8 [1/1] (1.76ns)   --->   "br label %1" [full_img_conv_5x5.c:9]   --->   Operation 8 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 1.78>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%z = phi i5 [ 0, %0 ], [ %z_1, %2 ]"   --->   Operation 9 'phi' 'z' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (1.36ns)   --->   "%exitcond1 = icmp eq i5 %z, -4" [full_img_conv_5x5.c:9]   --->   Operation 10 'icmp' 'exitcond1' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 28, i64 28, i64 28) nounwind"   --->   Operation 11 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (1.78ns)   --->   "%z_1 = add i5 %z, 1" [full_img_conv_5x5.c:9]   --->   Operation 12 'add' 'z_1' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %3, label %2" [full_img_conv_5x5.c:9]   --->   Operation 13 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [2/2] (0.00ns)   --->   "call fastcc void @img_conv_5x5([2048 x i8]* %inptr, [60 x i8]* %outptr, [25 x i8]* %mask, i5 %z) nounwind" [full_img_conv_5x5.c:11]   --->   Operation 14 'call' <Predicate = (!exitcond1)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "ret void" [full_img_conv_5x5.c:19]   --->   Operation 15 'ret' <Predicate = (exitcond1)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 16 [1/2] (0.00ns)   --->   "call fastcc void @img_conv_5x5([2048 x i8]* %inptr, [60 x i8]* %outptr, [25 x i8]* %mask, i5 %z) nounwind" [full_img_conv_5x5.c:11]   --->   Operation 16 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 17 [1/1] (0.00ns)   --->   "br label %1" [full_img_conv_5x5.c:9]   --->   Operation 17 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 1
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+StgValue_4  (spectopmodule    ) [ 0000]
+inptr       (alloca           ) [ 0011]
+outptr      (alloca           ) [ 0011]
+mask        (alloca           ) [ 0011]
+StgValue_8  (br               ) [ 0111]
+z           (phi              ) [ 0011]
+exitcond1   (icmp             ) [ 0011]
+empty       (speclooptripcount) [ 0000]
+z_1         (add              ) [ 0111]
+StgValue_13 (br               ) [ 0000]
+StgValue_15 (ret              ) [ 0000]
+StgValue_16 (call             ) [ 0000]
+StgValue_17 (br               ) [ 0111]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1001" name="const_0">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecTopModule"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1001" name="const_2">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="convolve_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1001" name="const_4">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1001" name="const_6">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1001" name="const_8">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1001" name="const_10">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecLoopTripCount"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="img_conv_5x5"/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1004" name="inptr_alloca_fu_18">
+<pin_list>
+<pin id="19" dir="0" index="0" bw="1" slack="0"/>
+<pin id="20" dir="1" index="1" bw="8" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="inptr/1 "/>
+</bind>
+</comp>
+
+<comp id="22" class="1004" name="outptr_alloca_fu_22">
+<pin_list>
+<pin id="23" dir="0" index="0" bw="1" slack="0"/>
+<pin id="24" dir="1" index="1" bw="8" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="outptr/1 "/>
+</bind>
+</comp>
+
+<comp id="26" class="1004" name="mask_alloca_fu_26">
+<pin_list>
+<pin id="27" dir="0" index="0" bw="1" slack="0"/>
+<pin id="28" dir="1" index="1" bw="8" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="mask/1 "/>
+</bind>
+</comp>
+
+<comp id="30" class="1005" name="z_reg_30">
+<pin_list>
+<pin id="31" dir="0" index="0" bw="5" slack="1"/>
+<pin id="32" dir="1" index="1" bw="5" slack="1"/>
+</pin_list>
+<bind>
+<opset="z (phireg) "/>
+</bind>
+</comp>
+
+<comp id="34" class="1004" name="z_phi_fu_34">
+<pin_list>
+<pin id="35" dir="0" index="0" bw="1" slack="1"/>
+<pin id="36" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="37" dir="0" index="2" bw="5" slack="0"/>
+<pin id="38" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="39" dir="1" index="4" bw="5" slack="0"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="z/2 "/>
+</bind>
+</comp>
+
+<comp id="42" class="1004" name="grp_img_conv_5x5_fu_42">
+<pin_list>
+<pin id="43" dir="0" index="0" bw="0" slack="0"/>
+<pin id="44" dir="0" index="1" bw="8" slack="2147483647"/>
+<pin id="45" dir="0" index="2" bw="8" slack="2147483647"/>
+<pin id="46" dir="0" index="3" bw="8" slack="2147483647"/>
+<pin id="47" dir="0" index="4" bw="5" slack="0"/>
+<pin id="48" dir="1" index="5" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_14/2 "/>
+</bind>
+</comp>
+
+<comp id="51" class="1004" name="exitcond1_fu_51">
+<pin_list>
+<pin id="52" dir="0" index="0" bw="5" slack="0"/>
+<pin id="53" dir="0" index="1" bw="5" slack="0"/>
+<pin id="54" dir="1" index="2" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="exitcond1/2 "/>
+</bind>
+</comp>
+
+<comp id="57" class="1004" name="z_1_fu_57">
+<pin_list>
+<pin id="58" dir="0" index="0" bw="5" slack="0"/>
+<pin id="59" dir="0" index="1" bw="1" slack="0"/>
+<pin id="60" dir="1" index="2" bw="5" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="z_1/2 "/>
+</bind>
+</comp>
+
+<comp id="66" class="1005" name="z_1_reg_66">
+<pin_list>
+<pin id="67" dir="0" index="0" bw="5" slack="0"/>
+<pin id="68" dir="1" index="1" bw="5" slack="0"/>
+</pin_list>
+<bind>
+<opset="z_1 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="21"><net_src comp="4" pin="0"/><net_sink comp="18" pin=0"/></net>
+
+<net id="25"><net_src comp="4" pin="0"/><net_sink comp="22" pin=0"/></net>
+
+<net id="29"><net_src comp="4" pin="0"/><net_sink comp="26" pin=0"/></net>
+
+<net id="33"><net_src comp="6" pin="0"/><net_sink comp="30" pin=0"/></net>
+
+<net id="40"><net_src comp="30" pin="1"/><net_sink comp="34" pin=0"/></net>
+
+<net id="41"><net_src comp="34" pin="4"/><net_sink comp="30" pin=0"/></net>
+
+<net id="49"><net_src comp="16" pin="0"/><net_sink comp="42" pin=0"/></net>
+
+<net id="50"><net_src comp="34" pin="4"/><net_sink comp="42" pin=4"/></net>
+
+<net id="55"><net_src comp="34" pin="4"/><net_sink comp="51" pin=0"/></net>
+
+<net id="56"><net_src comp="8" pin="0"/><net_sink comp="51" pin=1"/></net>
+
+<net id="61"><net_src comp="34" pin="4"/><net_sink comp="57" pin=0"/></net>
+
+<net id="62"><net_src comp="14" pin="0"/><net_sink comp="57" pin=1"/></net>
+
+<net id="69"><net_src comp="57" pin="2"/><net_sink comp="66" pin=0"/></net>
+
+<net id="70"><net_src comp="66" pin="1"/><net_sink comp="34" pin=2"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+		exitcond1 : 1
+		z_1 : 1
+		StgValue_13 : 2
+		StgValue_14 : 1
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|------------------------|---------|---------|---------|---------|
+| Operation|     Functional Unit    |  DSP48E |  Delay  |    FF   |   LUT   |
+|----------|------------------------|---------|---------|---------|---------|
+|   call   | grp_img_conv_5x5_fu_42 |    3    |  12.932 |   288   |   505   |
+|----------|------------------------|---------|---------|---------|---------|
+|    add   |        z_1_fu_57       |    0    |    0    |    0    |    15   |
+|----------|------------------------|---------|---------|---------|---------|
+|   icmp   |     exitcond1_fu_51    |    0    |    0    |    0    |    11   |
+|----------|------------------------|---------|---------|---------|---------|
+|   Total  |                        |    3    |  12.932 |   288   |   531   |
+|----------|------------------------|---------|---------|---------|---------|
+
+Memories:
++------+--------+--------+--------+
+|      |  BRAM  |   FF   |   LUT  |
++------+--------+--------+--------+
+| inptr|    1   |    0   |    0   |
+| mask |    0   |   16   |    4   |
+|outptr|    0   |   16   |    8   |
++------+--------+--------+--------+
+| Total|    1   |   32   |   12   |
++------+--------+--------+--------+
+
+* Register list:
++----------+--------+
+|          |   FF   |
++----------+--------+
+|z_1_reg_66|    5   |
+| z_reg_30 |    5   |
++----------+--------+
+|   Total  |   10   |
++----------+--------+
+
+* Multiplexer (MUX) list: 
+|----------|------|------|------|--------||---------||---------|
+|   Comp   |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|----------|------|------|------|--------||---------||---------|
+| z_reg_30 |  p0  |   2  |   5  |   10   ||    9    |
+|----------|------|------|------|--------||---------||---------|
+|   Total  |      |      |      |   10   ||  1.769  ||    9    |
+|----------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+--------+
+|           |  BRAM  | DSP48E |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+--------+--------+
+|  Function |    -   |    3   |   12   |   288  |   531  |
+|   Memory  |    1   |    -   |    -   |   32   |   12   |
+|Multiplexer|    -   |    -   |    1   |    -   |    9   |
+|  Register |    -   |    -   |    -   |   10   |    -   |
++-----------+--------+--------+--------+--------+--------+
+|   Total   |    1   |    3   |   14   |   330  |   552  |
++-----------+--------+--------+--------+--------+--------+

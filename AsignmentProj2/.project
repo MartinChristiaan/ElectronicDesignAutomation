@@ -42,12 +42,22 @@
 			<location>C:/Users/marti/Source/Repos/ElectronicDesignAutomation/AsignmentProj2/solution1/.tcls</location>
 		</link>
 		<link>
+			<name>source/full_img_conv_5x5.c</name>
+			<type>1</type>
+			<location>C:/Users/marti/Source/Repos/ElectronicDesignAutomation/full_img_conv_5x5.c</location>
+		</link>
+		<link>
 			<name>source/img_conv_5x5.c</name>
 			<type>1</type>
 			<location>C:/Users/marti/Source/Repos/ElectronicDesignAutomation/img_conv_5x5.c</location>
 		</link>
 		<link>
 			<name>source/img_conv_5x5.h</name>
+			<type>1</type>
+			<location>C:/Users/marti/Source/Repos/ElectronicDesignAutomation/img_conv_5x5.h</location>
+		</link>
+		<link>
+			<name>testbench/img_conv_5x5.h</name>
 			<type>1</type>
 			<location>C:/Users/marti/Source/Repos/ElectronicDesignAutomation/img_conv_5x5.h</location>
 		</link>

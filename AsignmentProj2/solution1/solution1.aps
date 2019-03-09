@@ -2,15 +2,12 @@
     <checksum>
         <value string="false"/>
     </checksum>
-    <downStreamTool>
-        <DownStreamTool name="vivado"/>
-    </downStreamTool>
-    <clockList>
-        <clock name="default" period="10"/>
-    </clockList>
-    <config/>
+    <config>
+        <config_compile blackbox=""/>
+        <schedule model="convolve"/>
+    </config>
     <UIConfigurations>
-        <UIAutosynConf hideTrivialOp="true" isBasedOnBoard="false" isSolutionDirty="false" isStopAskAgain="false" showDetailDesignViewer="false">
+        <UIAutosynConf hideTrivialOp="true" isBasedOnBoard="false" isSolutionDirty="true" isStopAskAgain="false" showDetailDesignViewer="false">
             <Platform>xilinx/azynq/azynq</Platform>
             <Platform>xilinx/azynq/azynq_fpv6</Platform>
             <customLibs/>
@@ -68,5 +65,11 @@
         <library name="DefaultPlatform" value="xilinx/azynq/azynq"/>
         <library name="DefaultPlatform" value="xilinx/azynq/azynq_fpv6"/>
     </libraryList>
+    <downStreamTool>
+        <DownStreamTool name="vivado"/>
+    </downStreamTool>
+    <clockList>
+        <clock default="false" name="default" period="10"/>
+    </clockList>
 </solution>
 

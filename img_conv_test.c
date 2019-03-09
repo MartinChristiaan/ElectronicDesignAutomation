@@ -48,7 +48,7 @@ int main()
 
         outptr[x] = sum; // Add +1 here to see tests fail!
     }
-    img_conv_5x5(inptr2,outptr2, mask2,shift);
+    img_conv_5x5(inptr2,outptr2, mask2,shift,0);
     int incorrect = 0;
     for(int x2 = 0; x2 < X_N-4; x2++)
     {

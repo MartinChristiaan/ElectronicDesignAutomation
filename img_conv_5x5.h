@@ -29,7 +29,7 @@ void img_conv_5x5(unsigned char inptr[X_N*Y_N],
                   unsigned char outptr[X_N], 
                  // int8 x_dim,
                   char mask[M_N],
-                  int  shift) ;
+                  int  shift,int z) ;
 
 #endif
 

@@ -55,8 +55,6 @@
                                     									
                                     <listOptionValue builtIn="false" value="G:/Vivadoshizzle/Vivado/2018.3/win64/tools/auto_cc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="C:/Users/marti/Source/Repos/ElectronicDesignAutomation"/>
-                                    									
                                     <listOptionValue builtIn="false" value="G:/Vivadoshizzle/Vivado/2018.3/include/etc"/>
                                     									
                                     <listOptionValue builtIn="false" value="G:/Vivadoshizzle/Vivado/2018.3/include"/>
@@ -90,8 +88,6 @@
                                     <listOptionValue builtIn="false" value="G:/Vivadoshizzle/Vivado/2018.3/include/ap_sysc"/>
                                     									
                                     <listOptionValue builtIn="false" value="G:/Vivadoshizzle/Vivado/2018.3/win64/tools/auto_cc/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="C:/Users/marti/Source/Repos/ElectronicDesignAutomation"/>
                                     									
                                     <listOptionValue builtIn="false" value="G:/Vivadoshizzle/Vivado/2018.3/include/etc"/>
                                     									
@@ -163,7 +159,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding="solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding="solution1|source/img_conv_5x5.h|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				
@@ -227,8 +223,6 @@
                                     									
                                     <listOptionValue builtIn="false" value="G:/Vivadoshizzle/Vivado/2018.3/win64/tools/auto_cc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="C:/Users/marti/Source/Repos/ElectronicDesignAutomation"/>
-                                    									
                                     <listOptionValue builtIn="false" value="G:/Vivadoshizzle/Vivado/2018.3/include/etc"/>
                                     									
                                     <listOptionValue builtIn="false" value="G:/Vivadoshizzle/Vivado/2018.3/include"/>
@@ -252,8 +246,6 @@
                                     <listOptionValue builtIn="false" value="G:/Vivadoshizzle/Vivado/2018.3/include/ap_sysc"/>
                                     									
                                     <listOptionValue builtIn="false" value="G:/Vivadoshizzle/Vivado/2018.3/win64/tools/auto_cc/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="C:/Users/marti/Source/Repos/ElectronicDesignAutomation"/>
                                     									
                                     <listOptionValue builtIn="false" value="G:/Vivadoshizzle/Vivado/2018.3/include/etc"/>
                                     									
@@ -315,7 +307,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding="solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding="solution1|source/img_conv_5x5.h|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				

@@ -21,7 +21,7 @@ void img_conv_5x5(unsigned char inptr[X_N*Y_N],
                   unsigned char outptr[X_N-4], // should this not be X_N - 5
                  // int8 x_dim,
                   char mask[M_N],
-                  int  shift) 
+                  int  shift,int y)
 {
   
    unsigned char     *IN1,*IN2,*IN3,*IN4,*IN5;
@@ -32,21 +32,21 @@ void img_conv_5x5(unsigned char inptr[X_N*Y_N],
 
    int      sum,    sum00,  sum11, sum22, sum33, sum44;
    int      i;
-   int      j;
+   int      x;
 
 // seting pointers to read data from five rows of inptr[]
 // and to write the results to a row OUT
-   IN1      =   inptr;
+   IN1      =   inptr + y * X_N;
    IN2      =   IN1 + X_N;  // X_N row width
    IN3      =   IN2 + X_N;
    IN4      =   IN3 + X_N;
    IN5      =   IN4 + X_N;
    OUT      =   outptr;
 
-// go through the row of inptr[] image with j index
+// go through the row of inptr[] image with x index
 // produce one convolution output OUT pixel per iteration  
 
-for (j = 0; j < X_N - 4 ; j++)
+for (x = 0; x < X_N - 4 ; x++)
     {
          sum = 0;
 

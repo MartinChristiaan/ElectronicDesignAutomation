@@ -1,0 +1,120 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'convolve'" level="0">
+<item name = "Date">Sat Mar  9 10:48:30 2019
+</item>
+<item name = "Version">2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)</item>
+<item name = "Project">AsignmentProj2</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">azynq</item>
+<item name = "Target device">xa7z030fbv484-1i</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 11.000, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">53845, 53845, 53845, 53845, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_img_conv_5x5_fu_42">img_conv_5x5, 1921, 1921, 1921, 1921, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">53844, 53844, 1923, -, -, 28, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, -, -, -</column>
+<column name="Expression">-, -, 0, 26</column>
+<column name="FIFO">-, -, -, -</column>
+<column name="Instance">-, 3, 178, 514</column>
+<column name="Memory">1, -, 32, 12</column>
+<column name="Multiplexer">-, -, -, 30</column>
+<column name="Register">-, -, 14, -</column>
+<specialColumn name="Available">530, 400, 157200, 78600</specialColumn>
+<specialColumn name="Utilization (%)">~0, ~0, ~0, ~0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="grp_img_conv_5x5_fu_42">img_conv_5x5, 0, 3, 178, 514</column>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+<column name="inptr_U">convolve_inptr, 1, 0, 0, 2048, 8, 1, 16384</column>
+<column name="mask_U">convolve_mask, 0, 16, 4, 25, 8, 1, 200</column>
+<column name="outptr_U">convolve_outptr, 0, 16, 8, 60, 8, 1, 480</column>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="z_1_fu_57_p2">+, 0, 0, 15, 5, 1</column>
+<column name="exitcond1_fu_51_p2">icmp, 0, 0, 11, 5, 4</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">21, 4, 1, 4</column>
+<column name="z_reg_30">9, 2, 5, 10</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">3, 0, 3, 0</column>
+<column name="grp_img_conv_5x5_fu_42_ap_start_reg">1, 0, 1, 0</column>
+<column name="z_1_reg_66">5, 0, 5, 0</column>
+<column name="z_reg_30">5, 0, 5, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, convolve, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, convolve, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, convolve, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, convolve, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, convolve, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, convolve, return value</column>
+</table>
+</item>
+</section>
+</profile>

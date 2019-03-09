@@ -1,33 +1,84 @@
 INFO: [HLS 200-10] Running 'G:/Vivadoshizzle/Vivado/2018.3/bin/unwrapped/win64.o/vivado_hls.exe'
-INFO: [HLS 200-10] For user 'marti' on host 'desktop-36jv2d4' (Windows NT_amd64 version 6.2) on Tue Mar 05 18:34:33 +0100 2019
+INFO: [HLS 200-10] For user 'marti' on host 'desktop-36jv2d4' (Windows NT_amd64 version 6.2) on Sat Mar 09 10:48:18 +0100 2019
 INFO: [HLS 200-10] In directory 'C:/Users/marti/Source/Repos/ElectronicDesignAutomation'
 INFO: [HLS 200-10] Opening project 'C:/Users/marti/Source/Repos/ElectronicDesignAutomation/AsignmentProj2'.
+INFO: [HLS 200-10] Adding design file 'full_img_conv_5x5.c' to the project
+INFO: [HLS 200-10] Adding design file 'img_conv_5x5.c' to the project
+INFO: [HLS 200-10] Adding design file 'img_conv_5x5.h' to the project
+INFO: [HLS 200-10] Adding test bench file 'img_conv_5x5.h' to the project
+INFO: [HLS 200-10] Adding test bench file 'img_conv_test.c' to the project
 INFO: [HLS 200-10] Opening solution 'C:/Users/marti/Source/Repos/ElectronicDesignAutomation/AsignmentProj2/solution1'.
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-10] Setting target device to 'xa7z030fbv484-1i'
-INFO: [SIM 211-2] *************** CSIM start ***************
-INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
-   Compiling(apcc) ../../../../img_conv_test.c in debug mode
-INFO: [HLS 200-10] Running 'G:/Vivadoshizzle/Vivado/2018.3/bin/unwrapped/win64.o/apcc.exe'
-INFO: [HLS 200-10] For user 'marti' on host 'desktop-36jv2d4' (Windows NT_amd64 version 6.2) on Tue Mar 05 18:34:36 +0100 2019
-INFO: [HLS 200-10] In directory 'C:/Users/marti/Source/Repos/ElectronicDesignAutomation/AsignmentProj2/solution1/csim/build'
-../../../../img_conv_test.c:51:34: warning: passing 'unsigned char [25]' to parameter of type 'char *' converts between pointers to integer types with different sign [-Wpointer-sign]
-    img_conv_5x5(inptr2,outptr2, mask2,shift);
-                                 ^~~~~
-../../../../img_conv_5x5.h:31:24: note: passing argument to parameter 'mask' here
-                  char mask[M_N],
-                       ^
-1 warning generated.
-../../../../img_conv_test.c:51:34: warning: passing 'unsigned char [25]' to parameter of type 'char *' converts between pointers to integer types with different sign [-Wpointer-sign]
-    img_conv_5x5(inptr2,outptr2, mask2,shift);
-                                 ^~~~~
-../../../../img_conv_5x5.h:31:24: note: passing argument to parameter 'mask' here
-                  char mask[M_N],
-                       ^
-1 warning generated.
-INFO: [APCC 202-3] Tmp directory is C:/tmp/apcc_db_marti/93241232848362
-INFO: [APCC 202-1] APCC is done.
-   Generating csim.exe
-CORRECT! 
-INFO: [SIM 211-1] CSim done with 0 errors.
-INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'img_conv_5x5.c' ... 
+INFO: [HLS 200-10] Analyzing design file 'full_img_conv_5x5.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 103.105 ; gain = 16.801
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 103.105 ; gain = 16.801
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 104.402 ; gain = 18.098
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-77] The top function 'convolve' (full_img_conv_5x5.c:2) has no outputs. Possible cause(s) are: (1) Output parameters are passed by value; (2) intended outputs (parameters or global variables) are never written; (3) there are infinite loops.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 104.660 ; gain = 18.355
+INFO: [XFORM 203-11] Balancing expressions in function 'img_conv_5x5' (img_conv_5x5.c:20)...17 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 126.375 ; gain = 40.070
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 126.883 ; gain = 40.578
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'convolve' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'img_conv_5x5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-21] Estimated clock period (11ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+WARNING: [SCHED 204-21] The critical path in module 'img_conv_5x5' consists of the following:
+	'mul' operation of DSP[99] ('sum44', img_conv_5x5.c:72) [95]  (3.36 ns)
+	'add' operation of DSP[99] ('tmp2', img_conv_5x5.c:74) [99]  (3.82 ns)
+	'add' operation of DSP[101] ('tmp5', img_conv_5x5.c:74) [101]  (3.82 ns)
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 11.232 seconds; current allocated memory: 85.752 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 2 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.143 seconds; current allocated memory: 86.196 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'convolve' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.163 seconds; current allocated memory: 86.298 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.088 seconds; current allocated memory: 86.357 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'img_conv_5x5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'convolve_mac_muladd_8ns_8s_16s_17_1_1' to 'convolve_mac_mulabkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'convolve_mac_muladd_8ns_8s_17s_18_1_1' to 'convolve_mac_mulacud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'convolve_mac_mulabkb': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'convolve_mac_mulacud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'img_conv_5x5'.
+INFO: [HLS 200-111]  Elapsed time: 0.16 seconds; current allocated memory: 86.950 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'convolve' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on function 'convolve' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'convolve'.
+INFO: [HLS 200-111]  Elapsed time: 0.561 seconds; current allocated memory: 87.358 MB.
+WARNING: [RTMG 210-274] Memory 'convolve_inptr' is read-only, switch it to a ROM.
+INFO: [RTMG 210-279] Implementing memory 'convolve_inptr_rom' using block ROMs.
+INFO: [RTMG 210-278] Implementing memory 'convolve_outptr_ram (RAM)' using distributed RAMs.
+WARNING: [RTMG 210-274] Memory 'convolve_mask' is read-only, switch it to a ROM.
+INFO: [RTMG 210-279] Implementing memory 'convolve_mask_rom' using distributed ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:02 ; elapsed = 00:00:14 . Memory (MB): peak = 137.859 ; gain = 51.555
+INFO: [SYSC 207-301] Generating SystemC RTL for convolve.
+INFO: [VHDL 208-304] Generating VHDL RTL for convolve.
+INFO: [VLOG 209-307] Generating Verilog RTL for convolve.
+INFO: [HLS 200-112] Total elapsed time: 14.173 seconds; peak allocated memory: 87.358 MB.

@@ -1,0 +1,32 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling(apcc) ../../../../img_conv_test.c in debug mode
+INFO: [HLS 200-10] Running 'G:/Vivadoshizzle/Vivado/2018.3/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'marti' on host 'desktop-36jv2d4' (Windows NT_amd64 version 6.2) on Sat Mar 09 10:45:56 +0100 2019
+INFO: [HLS 200-10] In directory 'C:/Users/marti/Source/Repos/ElectronicDesignAutomation/AsignmentProj2/solution1/csim/build'
+../../../../img_conv_test.c:51:34: warning: passing 'unsigned char [25]' to parameter of type 'char *' converts between pointers to integer types with different sign [-Wpointer-sign]
+    img_conv_5x5(inptr2,outptr2, mask2,shift,0);
+                                 ^~~~~
+../../../../img_conv_5x5.h:31:24: note: passing argument to parameter 'mask' here
+                  char mask[M_N],
+                       ^
+1 warning generated.
+../../../../img_conv_test.c:51:34: warning: passing 'unsigned char [25]' to parameter of type 'char *' converts between pointers to integer types with different sign [-Wpointer-sign]
+    img_conv_5x5(inptr2,outptr2, mask2,shift,0);
+                                 ^~~~~
+../../../../img_conv_5x5.h:31:24: note: passing argument to parameter 'mask' here
+                  char mask[M_N],
+                       ^
+1 warning generated.
+INFO: [APCC 202-3] Tmp directory is C:/tmp/apcc_db_marti/10124885345268
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../../full_img_conv_5x5.c in debug mode
+INFO: [HLS 200-10] Running 'G:/Vivadoshizzle/Vivado/2018.3/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'marti' on host 'desktop-36jv2d4' (Windows NT_amd64 version 6.2) on Sat Mar 09 10:46:02 +0100 2019
+INFO: [HLS 200-10] In directory 'C:/Users/marti/Source/Repos/ElectronicDesignAutomation/AsignmentProj2/solution1/csim/build'
+INFO: [APCC 202-3] Tmp directory is C:/tmp/apcc_db_marti/4948890917658
+INFO: [APCC 202-1] APCC is done.
+   Generating csim.exe
+CORRECT! 
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

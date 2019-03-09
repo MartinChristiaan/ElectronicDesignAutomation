@@ -1,0 +1,197 @@
+
+
+================================================================
+== Vivado HLS Report for 'img_conv_5x5'
+================================================================
+* Date:           Sat Mar  9 10:48:30 2019
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        AsignmentProj2
+* Solution:       solution1
+* Product family: azynq
+* Target device:  xa7z030fbv484-1i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|    11.000|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  1921|  1921|  1921|  1921|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+------+------+----------+-----------+-----------+------+----------+
+        |             |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+------+------+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  1920|  1920|        32|          -|          -|    60|    no    |
+        | + Loop 1.1  |    30|    30|         6|          -|          -|     5|    no    |
+        +-------------+------+------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      3|       -|      -|
+|Expression       |        -|      0|       0|    371|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|    143|
+|Register         |        -|      -|     178|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      3|     178|    514|
++-----------------+---------+-------+--------+-------+
+|Available        |      530|    400|  157200|  78600|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|   ~0  |   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    +-------------------------+----------------------+--------------+
+    |         Instance        |        Module        |  Expression  |
+    +-------------------------+----------------------+--------------+
+    |convolve_mac_mulabkb_U1  |convolve_mac_mulabkb  | i0 + i1 * i2 |
+    |convolve_mac_mulabkb_U3  |convolve_mac_mulabkb  | i0 + i1 * i2 |
+    |convolve_mac_mulacud_U2  |convolve_mac_mulacud  | i0 + i1 * i2 |
+    +-------------------------+----------------------+--------------+
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------+----------+-------+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+-------+---+----+------------+------------+
+    |sum00_fu_478_p2      |     *    |      0|  0|  41|           8|           8|
+    |sum33_fu_502_p2      |     *    |      0|  0|  41|           8|           8|
+    |i_1_fu_263_p2        |     +    |      0|  0|  12|           3|           1|
+    |p_rec_fu_243_p2      |     +    |      0|  0|  15|           6|           1|
+    |sum1_fu_283_p2       |     +    |      0|  0|  18|          11|          11|
+    |sum3_fu_357_p2       |     +    |      0|  0|  18|          11|          11|
+    |sum5_fu_380_p2       |     +    |      0|  0|  18|          11|          11|
+    |sum7_fu_418_p2       |     +    |      0|  0|  18|          11|          11|
+    |sum9_fu_440_p2       |     +    |      0|  0|  18|          11|          11|
+    |sum_1_fu_544_p2      |     +    |      0|  0|  28|          21|          21|
+    |tmp_11_fu_460_p2     |     +    |      0|  0|  15|           5|           5|
+    |tmp_13_fu_534_p2     |     +    |      0|  0|  26|          19|          19|
+    |tmp_1_fu_450_p2      |     +    |      0|  0|  15|           5|           4|
+    |tmp_7_fu_391_p2      |     +    |      0|  0|  13|           4|           3|
+    |tmp_9_fu_401_p2      |     +    |      0|  0|  13|           4|           4|
+    |exitcond2_fu_237_p2  |   icmp   |      0|  0|  11|           6|           4|
+    |exitcond_fu_257_p2   |   icmp   |      0|  0|   9|           3|           3|
+    |icmp_fu_319_p2       |   icmp   |      0|  0|  13|          13|           1|
+    |outptr_d0            |  select  |      0|  0|   8|           1|           2|
+    |p_s_fu_301_p3        |  select  |      0|  0|  21|           1|           1|
+    +---------------------+----------+-------+---+----+------------+------------+
+    |Total                |          |      0|  0| 371|         162|         140|
+    +---------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------+----+-----------+-----+-----------+
+    |        Name       | LUT| Input Size| Bits| Total Bits|
+    +-------------------+----+-----------+-----+-----------+
+    |IN4_0_rec_reg_184  |   9|          2|    6|         12|
+    |ap_NS_fsm          |  44|          9|    1|          9|
+    |i_reg_208          |   9|          2|    3|          6|
+    |inptr_address0     |  21|          4|   11|         44|
+    |inptr_address1     |  15|          3|   11|         33|
+    |mask_address0      |  21|          4|    5|         20|
+    |mask_address1      |  15|          3|    5|         15|
+    |sum_reg_196        |   9|          2|   21|         42|
+    +-------------------+----+-----------+-----+-----------+
+    |Total              | 143|         29|   63|        181|
+    +-------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+----+----+-----+-----------+
+    |           Name          | FF | LUT| Bits| Const Bits|
+    +-------------------------+----+----+-----+-----------+
+    |IN4_0_rec_cast1_reg_581  |   6|   0|   11|          5|
+    |IN4_0_rec_reg_184        |   6|   0|    6|          0|
+    |ap_CS_fsm                |   8|   0|    8|          0|
+    |i_1_reg_614              |   3|   0|    3|          0|
+    |i_cast1_reg_599          |   3|   0|    5|          2|
+    |i_cast_reg_605           |   3|   0|    4|          1|
+    |i_reg_208                |   3|   0|    3|          0|
+    |inptr_load_1_reg_660     |   8|   0|    8|          0|
+    |inptr_load_2_reg_665     |   8|   0|    8|          0|
+    |mask_load_1_reg_680      |   8|   0|    8|          0|
+    |mask_load_2_reg_685      |   8|   0|    8|          0|
+    |outptr_addr_reg_586      |   6|   0|    6|          0|
+    |p_rec_reg_594            |   6|   0|    6|          0|
+    |reg_220                  |   8|   0|    8|          0|
+    |reg_224                  |   8|   0|    8|          0|
+    |sum33_reg_700            |  16|   0|   16|          0|
+    |sum_reg_196              |  21|   0|   21|          0|
+    |tmp4_reg_629             |  11|   0|   11|          0|
+    |tmp5_reg_710             |  18|   0|   18|          0|
+    |tmp9_reg_705             |  17|   0|   17|          0|
+    |tmp_reg_635              |   3|   0|    7|          4|
+    +-------------------------+----+----+-----+-----------+
+    |Total                    | 178|   0|  190|         12|
+    +-------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------+-----+-----+------------+--------------+--------------+
+|    RTL Ports    | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-----------------+-----+-----+------------+--------------+--------------+
+|ap_clk           |  in |    1| ap_ctrl_hs | img_conv_5x5 | return value |
+|ap_rst           |  in |    1| ap_ctrl_hs | img_conv_5x5 | return value |
+|ap_start         |  in |    1| ap_ctrl_hs | img_conv_5x5 | return value |
+|ap_done          | out |    1| ap_ctrl_hs | img_conv_5x5 | return value |
+|ap_idle          | out |    1| ap_ctrl_hs | img_conv_5x5 | return value |
+|ap_ready         | out |    1| ap_ctrl_hs | img_conv_5x5 | return value |
+|inptr_address0   | out |   11|  ap_memory |     inptr    |     array    |
+|inptr_ce0        | out |    1|  ap_memory |     inptr    |     array    |
+|inptr_q0         |  in |    8|  ap_memory |     inptr    |     array    |
+|inptr_address1   | out |   11|  ap_memory |     inptr    |     array    |
+|inptr_ce1        | out |    1|  ap_memory |     inptr    |     array    |
+|inptr_q1         |  in |    8|  ap_memory |     inptr    |     array    |
+|outptr_address0  | out |    6|  ap_memory |    outptr    |     array    |
+|outptr_ce0       | out |    1|  ap_memory |    outptr    |     array    |
+|outptr_we0       | out |    1|  ap_memory |    outptr    |     array    |
+|outptr_d0        | out |    8|  ap_memory |    outptr    |     array    |
+|mask_address0    | out |    5|  ap_memory |     mask     |     array    |
+|mask_ce0         | out |    1|  ap_memory |     mask     |     array    |
+|mask_q0          |  in |    8|  ap_memory |     mask     |     array    |
+|mask_address1    | out |    5|  ap_memory |     mask     |     array    |
+|mask_ce1         | out |    1|  ap_memory |     mask     |     array    |
+|mask_q1          |  in |    8|  ap_memory |     mask     |     array    |
+|y                |  in |    5|   ap_none  |       y      |    scalar    |
++-----------------+-----+-----+------------+--------------+--------------+
+

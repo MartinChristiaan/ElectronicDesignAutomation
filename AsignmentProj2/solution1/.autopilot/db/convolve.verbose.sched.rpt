@@ -1,0 +1,142 @@
+
+
+================================================================
+== Vivado HLS Report for 'convolve'
+================================================================
+* Date:           Sat Mar  9 10:48:29 2019
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        AsignmentProj2
+* Solution:       solution1
+* Product family: azynq
+* Target device:  xa7z030fbv484-1i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|    11.000|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-------+-------+-------+-------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    |  min  |  max  |  min  |  max  |   Type  |
+    +-------+-------+-------+-------+---------+
+    |  53845|  53845|  53845|  53845|   none  |
+    +-------+-------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-------+-------+----------+-----------+-----------+------+----------+
+        |          |    Latency    | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|  min  |  max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-------+-------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  53844|  53844|      1923|          -|          -|    28|    no    |
+        +----------+-------+-------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond1)
+3 --> 
+	2  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @convolve_str) nounwind"   --->   Operation 4 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%inptr = alloca [2048 x i8], align 16" [full_img_conv_5x5.c:4]   --->   Operation 5 'alloca' 'inptr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%outptr = alloca [60 x i8], align 16"   --->   Operation 6 'alloca' 'outptr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%mask = alloca [25 x i8], align 16" [full_img_conv_5x5.c:7]   --->   Operation 7 'alloca' 'mask' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (1.76ns)   --->   "br label %1" [full_img_conv_5x5.c:9]   --->   Operation 8 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 1.78>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%z = phi i5 [ 0, %0 ], [ %z_1, %2 ]"   --->   Operation 9 'phi' 'z' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (1.36ns)   --->   "%exitcond1 = icmp eq i5 %z, -4" [full_img_conv_5x5.c:9]   --->   Operation 10 'icmp' 'exitcond1' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 28, i64 28, i64 28) nounwind"   --->   Operation 11 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (1.78ns)   --->   "%z_1 = add i5 %z, 1" [full_img_conv_5x5.c:9]   --->   Operation 12 'add' 'z_1' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %3, label %2" [full_img_conv_5x5.c:9]   --->   Operation 13 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [2/2] (0.00ns)   --->   "call fastcc void @img_conv_5x5([2048 x i8]* %inptr, [60 x i8]* %outptr, [25 x i8]* %mask, i5 %z) nounwind" [full_img_conv_5x5.c:11]   --->   Operation 14 'call' <Predicate = (!exitcond1)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "ret void" [full_img_conv_5x5.c:19]   --->   Operation 15 'ret' <Predicate = (exitcond1)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 16 [1/2] (0.00ns)   --->   "call fastcc void @img_conv_5x5([2048 x i8]* %inptr, [60 x i8]* %outptr, [25 x i8]* %mask, i5 %z) nounwind" [full_img_conv_5x5.c:11]   --->   Operation 16 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 17 [1/1] (0.00ns)   --->   "br label %1" [full_img_conv_5x5.c:9]   --->   Operation 17 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('z') with incoming values : ('z', full_img_conv_5x5.c:9) [7]  (1.77 ns)
+
+ <State 2>: 1.78ns
+The critical path consists of the following:
+	'phi' operation ('z') with incoming values : ('z', full_img_conv_5x5.c:9) [7]  (0 ns)
+	'add' operation ('z', full_img_conv_5x5.c:9) [10]  (1.78 ns)
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

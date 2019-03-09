@@ -6,31 +6,18 @@
       <simLog/>
       <mgLog/>
       <packageLog/>
-      <csimLog>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value." projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T18:30:47.570+0100"/>
-        <logs message="@E Simulation failed: Function 'main' returns nonzero value '1'." projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T18:30:47.558+0100"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T18:24:22.858+0100"/>
-        <logs message="ERROR: [APCC 202-1] APCC failed.&#xD;&#xA;g++.exe: error: obj/img_conv_test.o: No such file or directory&#xD;&#xA;make: *** [csim.exe] Error 1" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T18:24:22.842+0100"/>
-        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T18:24:22.829+0100"/>
-        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T18:24:22.816+0100"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T15:28:01.167+0100"/>
-        <logs message="ERROR: [APCC 202-1] APCC failed.&#xD;&#xA;g++.exe: error: obj/img_conv_5x5.o: No such file or directory&#xD;&#xA;make: *** [csim.exe] Error 1" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T15:28:01.154+0100"/>
-        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T15:28:01.128+0100"/>
-        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T15:28:01.114+0100"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T14:15:28.483+0100"/>
-        <logs message="ERROR: [APCC 202-1] APCC failed.&#xD;&#xA;g++.exe: error: obj/img_conv_test.o: No such file or directory&#xD;&#xA;make: *** [csim.exe] Error 1" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T14:15:28.469+0100"/>
-        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T14:15:28.457+0100"/>
-        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T14:15:28.446+0100"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T14:13:03.495+0100"/>
-        <logs message="ERROR: [APCC 202-1] APCC failed.&#xD;&#xA;g++.exe: error: obj/img_conv_test.o: No such file or directory&#xD;&#xA;make: *** [csim.exe] Error 1" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T14:13:03.464+0100"/>
-        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T14:13:03.448+0100"/>
-        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-05T14:13:03.432+0100"/>
-      </csimLog>
+      <csimLog/>
     </logs>
   </errorLogs>
   <warningLogs>
     <logs>
-      <synLog/>
+      <synLog>
+        <logs message="WARNING: [RTMG 210-274] Memory 'convolve_mask' is read-only, switch it to a ROM." projectName="AsignmentProj2" solutionName="solution1" date="2019-03-09T10:48:31.361+0100" type="Warning"/>
+        <logs message="WARNING: [RTMG 210-274] Memory 'convolve_inptr' is read-only, switch it to a ROM." projectName="AsignmentProj2" solutionName="solution1" date="2019-03-09T10:48:31.241+0100" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-21] The critical path in module 'img_conv_5x5' consists of the following:&#xD;&#xA;&#x9;'mul' operation of DSP[99] ('sum44', img_conv_5x5.c:72) [95]  (3.36 ns)&#xD;&#xA;&#x9;'add' operation of DSP[99] ('tmp2', img_conv_5x5.c:74) [99]  (3.82 ns)&#xD;&#xA;&#x9;'add' operation of DSP[101] ('tmp5', img_conv_5x5.c:74) [101]  (3.82 ns)" projectName="AsignmentProj2" solutionName="solution1" date="2019-03-09T10:48:29.460+0100" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-21] Estimated clock period (11ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns)." projectName="AsignmentProj2" solutionName="solution1" date="2019-03-09T10:48:29.451+0100" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-77] The top function 'convolve' (full_img_conv_5x5.c:2) has no outputs. Possible cause(s) are: (1) Output parameters are passed by value; (2) intended outputs (parameters or global variables) are never written; (3) there are infinite loops." projectName="AsignmentProj2" solutionName="solution1" date="2019-03-09T10:48:28.876+0100" type="Warning"/>
+      </synLog>
       <simLog/>
       <mgLog/>
       <packageLog/>

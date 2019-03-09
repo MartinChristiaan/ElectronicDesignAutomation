@@ -1,5 +1,5 @@
 # ==============================================================
-# File generated on Tue Mar 05 18:34:33 +0100 2019
+# File generated on Sat Mar 09 10:45:53 +0100 2019
 # Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
@@ -21,7 +21,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../../../img_conv_test.c ../../../../img_conv_5x5.c
+HLS_SOURCES = ../../../../img_conv_test.c ../../../../full_img_conv_5x5.c ../../../../img_conv_5x5.c
 
 TARGET := csim.exe
 
@@ -81,6 +81,12 @@ $(ObjDir)/img_conv_test.o: ../../../../img_conv_test.c $(ObjDir)/.dir
 	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/img_conv_test.d
+
+$(ObjDir)/full_img_conv_5x5.o: ../../../../full_img_conv_5x5.c $(ObjDir)/.dir
+	$(Echo) "   Compiling(apcc) ../../../../full_img_conv_5x5.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/full_img_conv_5x5.d
 
 $(ObjDir)/img_conv_5x5.o: ../../../../img_conv_5x5.c $(ObjDir)/.dir
 	$(Echo) "   Compiling(apcc) ../../../../img_conv_5x5.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
